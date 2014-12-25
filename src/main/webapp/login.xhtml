@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>#{i18n.loginTitle}</title>
+</h:head>
+<h:body>
+	<h:form id="loginForm">
+		<p:growl id="msg" showDetail="true" life="3000" />
+		<p:panel header="#{i18n.auth}" style="width: 360px;margin: 100px auto 0;">
+			<h:panelGrid id="loginPanel" columns="2">
+				<h:outputText value="#{i18n.login}:" />
+				<p:inputText id="username" required="true" value="#{loginBacking.login}"></p:inputText>
+				<p:spacer></p:spacer>
+				<p:message for="username"></p:message>
+				<h:outputText value="#{i18n.password}:" />
+				<p:password id="password" required="true" value="#{loginBacking.password}"></p:password>
+				<p:spacer></p:spacer>
+				<p:message for="password"></p:message>
+				<p:commandButton action="#{loginBacking.login}" value="#{i18n.loginBtn}" update="loginForm" ajax="true"></p:commandButton>
+				<p:link outcome="pub/registration" value="#{i18n.registration}"></p:link>
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

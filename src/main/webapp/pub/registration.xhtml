@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:customJSF="http://himanshu/jsf-custom-components/">
+
+<h:head>
+	<title>#{i18n.registration}</title>
+</h:head>
+<h:body>
+	<h:form > 
+		<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+		<p:panel id="basic" header="#{i18n.registration}"
+			footer="Thanks!" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="10">
+				<h:outputLabel for="name" value="#{i18n.firstName}:">
+				</h:outputLabel>
+				<p:inputText if="name" value="#{regBacking.user.name}" pt:placeholder="#{i18n.firstName}"  required="true">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+				
+				<h:outputLabel for="login" value="#{i18n.login}:" />
+				<p:inputText if="login" value="#{regBacking.user.login}" pt:placeholder="#{i18n.login}" />
+
+				<h:outputLabel for="password" value="#{i18n.password}:" />
+				<p:password if="password" value="#{regBacking.user.password}" pt:placeholder="#{i18n.password}" />
+				
+				<h:outputLabel for="email" value="#{i18n.email}:" />
+				<customJSF:emailInput if="email" value="#{regBacking.user.email}" pt:placeholder="Email" >
+				</customJSF:emailInput>
+				<h:outputLabel for="money" value="#{i18n.money}:">
+				</h:outputLabel>
+				<p:inputText if="name" value="#{regBacking.user.money}" pt:placeholder="#{i18n.money}"  required="true">
+					<f:validateDoubleRange minimum="10.00" maximum="10000.00" />
+				</p:inputText>
+				
+			</h:panelGrid>
+		</p:panel>
+		<p:commandButton value="#{i18n.submit}" action="#{regBacking.submit}"></p:commandButton>
+	</h:form>
+</h:body>
+</html>
