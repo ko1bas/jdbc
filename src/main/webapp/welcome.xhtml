@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	>
 
 <h:head>
 	<title>#{i18n.homeTitle}</title>
@@ -14,17 +15,15 @@
 		<p:toolbar>
 			<f:facet name="right">
 				<p:commandButton actionListener="#{loginBacking.logout}" value="#{i18n.exit}" ajax="false"></p:commandButton>
-				<p:commandButton actionListener="#{loginBacking.logout}" value="#{i18n.exit}" ajax="false"></p:commandButton>
 			</f:facet>
 		</p:toolbar>
 	</h:form>
 	<p:layout style="min-width:400px;min-height:200px;">
-		<p:layoutUnit position="west" resizable="true" size="100" minSize="40"
+		<p:layoutUnit position="west" resizable="true" size="160" minSize="40"
 			maxSize="200">
 		<h:form>
                 <p:menubar>
-                    <p:menuitem value="Список продуктов" action="#{loginBacking.logout()}" ajax="false"/>
-                    <p:menuitem value="Список покупок" actionListener="#{welcomeBacking.toProductList()}"  ajax="false"/>
+                    <p:menuitem value="Список продуктов" action="#{welcomeBacking.toProductList}"  ajax="false"/>
                 </p:menubar>
         </h:form>
        </p:layoutUnit>

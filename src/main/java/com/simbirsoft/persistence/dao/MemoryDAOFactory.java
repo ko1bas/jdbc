@@ -7,4 +7,9 @@ public class MemoryDAOFactory extends DAOFactory {
 	public UserDAO getUserDAO() {
 		return userDao;
 	}
+
+	@Override
+	public ProductDAO getProductDAO() {
+		return null;
+	}
 }

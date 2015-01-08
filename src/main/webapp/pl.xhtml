@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+    <h:head>
+    <title>Список продуктов</title>
+    </h:head>
+ 
+    <h:body>
+ 		<p:dataTable value="#{productList.getProductList()}" var="pl">
+    		<p:column>
+    			<f:facet name="header">
+    				ProductID
+    			</f:facet>
+    				#{pl.id}
+    		</p:column>
+ 
+    		<p:column>
+    			<f:facet name="header">
+    				Category
+				</f:facet>
+    				#{pl.category}
+    		</p:column>
+ 
+ 			<p:column>
+    			<f:facet name="header">
+    				Name
+				</f:facet>
+    				#{pl.name}
+    		</p:column>
+    		
+    		<p:column>
+    			<f:facet name="header">
+    				Description
+				</f:facet>
+    				#{pl.description}
+    		</p:column>
+    		
+    		<p:column>
+    			<f:facet name="header">
+    				Price
+				</f:facet>
+    				#{pl.price}
+    		</p:column>
+    		<p:column>
+    			<f:facet name="header">
+    				Count
+				</f:facet>
+    				#{pl.count}
+    		</p:column>   		
+    	</p:dataTable>		
+    </h:body>
+ 
+</html>

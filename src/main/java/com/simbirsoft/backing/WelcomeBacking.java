@@ -25,7 +25,7 @@ public class WelcomeBacking implements Serializable{
 	}
 	
 	public String toProductList() {
-		return "productlist";
+		return "pl";
 	}
 	
 

@@ -9,6 +9,8 @@ public abstract class DAOFactory {
 	
 	public abstract UserDAO getUserDAO();
 	
+	public abstract ProductDAO getProductDAO();
+	
 	public static DAOFactory getDAOFactory(DAOTYPE whichFactory) {
 		switch (whichFactory) {
 			case MEMORY: 
